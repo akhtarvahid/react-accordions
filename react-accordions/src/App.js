@@ -1,9 +1,10 @@
 import './App.css';
+import Accordion1 from './components/Accordion1';
 
 function App() {
   return (
     <div className="App">
-      Accordions
+      <Accordion1 />
     </div>
   );
 }
