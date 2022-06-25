@@ -1,0 +1,20 @@
+body {
+    background: #c2c6ce;
+  }
+  .tile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    color: darkcyan;
+    margin: 5px;
+    cursor: pointer;
+  }
+  .left {
+    padding: 10px;
+  }
+  .is-active {
+    background: darkcyan;
+    color: white;
+  }
+  
