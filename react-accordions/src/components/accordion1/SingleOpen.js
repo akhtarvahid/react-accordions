@@ -22,11 +22,10 @@ export default class Accordion1 extends React.Component {
             onClick={() => this.handleTile(index)}
           >
             <AccordionHeader selectedIndx={this.state.selectedIndx} index={index} />
-
             {selectedIndx === index ? (
-              <React.Fragment>
-                <p>{list.content}</p>
-              </React.Fragment>
+              <div className="content">
+                <div>{list.content}</div>
+              </div>
             ) : null}
           </div>
         ))}
