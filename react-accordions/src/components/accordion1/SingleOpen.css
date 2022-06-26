@@ -1,14 +1,19 @@
 body {
     background: #c2c6ce;
   }
+  .heading {
+    background: rgb(39 43 49);
+    color: white;
+  }
   .tile {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: white;
     color: darkcyan;
-    margin: 5px;
     cursor: pointer;
+    padding: 5px;
+    margin: 7px 0;
   }
   .left {
     padding: 10px;
@@ -17,4 +22,6 @@ body {
     background: darkcyan;
     color: white;
   }
-  
+.content {
+  padding: 15px;
+}
