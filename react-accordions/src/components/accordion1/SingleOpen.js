@@ -1,5 +1,5 @@
 import React from 'react'
-import './singleOpen.css';
+import './SingleOpen.css';
 import listArray from "../../utils/data.json";
 import AccordionHeader from './AccordionHeader';
 export default class Accordion1 extends React.Component {
