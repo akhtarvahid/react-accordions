@@ -21,7 +21,7 @@ export default class Accordion1 extends React.Component {
             key={index}
             onClick={() => this.handleTile(index)}
           >
-            <AccordionHeader selectedIndx={this.state.selectedIndx} index={index} />
+            <AccordionHeader list={list} selectedIndx={this.state.selectedIndx} index={index} />
             {selectedIndx === index ? (
               <div className="content">
                 <div>{list.content}</div>
