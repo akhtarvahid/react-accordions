@@ -2,8 +2,9 @@ import React from "react";
 import ToggleIcon from "../../ToggleIcon";
 
 function AccordionHeader({ list, selectedIndx, index }) {
+  const activeClass = selectedIndx === index ? "tile is-active" : "tile";
   return (
-    <div className={selectedIndx === index ? "tile is-active" : "tile"}>
+    <div className={activeClass}>
       <div className="left">
         <div>{list.title}</div>
       </div>
