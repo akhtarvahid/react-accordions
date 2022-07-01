@@ -1,0 +1,10 @@
+.acc-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    color: darkcyan;
+    cursor: pointer;
+    padding: 5px;
+    margin: 7px 0; 
+}
