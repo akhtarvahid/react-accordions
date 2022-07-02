@@ -12,7 +12,11 @@ export default class SingleToggle extends Component {
     }
     selectedRowHandler=(row)=> {
       this.setState({
-          lists: this.state.lists.map(list => list.id === row.id ? ({...list, open: !list.open }): list)
+          lists: this.state.lists.map(list => {
+            return list.id === row.id ? 
+             ({...list, open: !list.open }): 
+             list
+          })
       })
     }
     render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import './SingleOpen.css';
 import listArray from "../../utils/data.json";
-import AccordionHeader from './AccordionHeader';
+import AccordionHeader from '../common/AccordionHeader';
 export default class Accordion1 extends React.Component {
   state = {
     lists: listArray,
