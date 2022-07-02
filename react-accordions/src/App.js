@@ -5,8 +5,10 @@ import SingleToggle from './components/accordion2/SingleToggle';
 function App() {
   return (
     <div className="App">
-      <h3>Accordions</h3>
+      <h3>Single Open</h3>
       <Accordion1 />
+
+      <h3>Single Toggle</h3>
       <SingleToggle />
     </div>
   );
