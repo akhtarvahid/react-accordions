@@ -1,5 +1,5 @@
 import React from "react";
-import ToggleIcon from "../../ToggleIcon";
+import ToggleIcon from "./ToggleIcon";
 
 function AccordionHeader({ list, selectedIndx, index }) {
   const activeClass = selectedIndx === index ? "tile is-active" : "tile";

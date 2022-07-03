@@ -5,6 +5,10 @@
     background: white;
     color: darkcyan;
     cursor: pointer;
-    padding: 5px;
-    margin: 7px 0; 
+    padding: 15px;
+    margin: 7px 0 0 0; 
+}
+.body {
+    background-color: aliceblue;
+    padding: 15px;
 }

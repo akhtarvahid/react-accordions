@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import listArray from "../../utils/data.json";
+import ToggleIcon from '../common/ToggleIcon';
 import './SingleToggle.css';
 export default class SingleToggle extends Component {
     state = {
@@ -11,8 +12,9 @@ export default class SingleToggle extends Component {
         })
     }
     selectedRowHandler=(row)=> {
+      const { lists } = this.state;
       this.setState({
-          lists: this.state.lists.map(list => {
+          lists: lists?.map(list => {
             return list.id === row.id ? 
              ({...list, open: !list.open }): 
              list
@@ -20,15 +22,16 @@ export default class SingleToggle extends Component {
       })
     }
     render() {
+        const { lists } = this.state;
         return (
             <div>
-              {this.state.lists.map(list => 
+              {lists.map(list => 
               <div key={list.id}  onClick={() => this.selectedRowHandler(list)}>
                  <div className="acc-heading">
                     <div>{list.title}</div>
-                    <div>V</div>
+                    <ToggleIcon state={list.open}/>
                  </div>
-                 {list.open && <div className="content">Opened</div>} 
+                 {list.open && <div className="body">{list.content}</div>} 
               </div>  
               )}
             </div>
