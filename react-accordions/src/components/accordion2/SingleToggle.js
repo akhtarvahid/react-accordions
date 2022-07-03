@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import listArray from "../../utils/data.json";
+import ToggleIcon from '../common/ToggleIcon';
 import './SingleToggle.css';
 export default class SingleToggle extends Component {
     state = {
@@ -26,9 +27,9 @@ export default class SingleToggle extends Component {
               <div key={list.id}  onClick={() => this.selectedRowHandler(list)}>
                  <div className="acc-heading">
                     <div>{list.title}</div>
-                    <div>V</div>
+                    <ToggleIcon state={list.open}/>
                  </div>
-                 {list.open && <div className="content">Opened</div>} 
+                 {list.open && <div className="body">{list.content}</div>} 
               </div>  
               )}
             </div>
