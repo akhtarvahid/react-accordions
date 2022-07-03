@@ -12,8 +12,9 @@ export default class SingleToggle extends Component {
         })
     }
     selectedRowHandler=(row)=> {
+      const { lists } = this.state;
       this.setState({
-          lists: this.state.lists.map(list => {
+          lists: lists?.map(list => {
             return list.id === row.id ? 
              ({...list, open: !list.open }): 
              list
@@ -21,9 +22,10 @@ export default class SingleToggle extends Component {
       })
     }
     render() {
+        const { lists } = this.state;
         return (
             <div>
-              {this.state.lists.map(list => 
+              {lists.map(list => 
               <div key={list.id}  onClick={() => this.selectedRowHandler(list)}>
                  <div className="acc-heading">
                     <div>{list.title}</div>
