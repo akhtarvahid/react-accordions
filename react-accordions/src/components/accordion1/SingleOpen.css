@@ -13,7 +13,7 @@ body {
     color: darkcyan;
     cursor: pointer;
     padding: 5px;
-    margin: 7px 0;
+    margin: 7px 0 0 0;
   }
   .left {
     padding: 10px;
@@ -23,5 +23,7 @@ body {
     color: white;
   }
 .content {
+  background-color: #214462;
   padding: 15px;
+  color: white;
 }
