@@ -4,7 +4,8 @@ import ToggleIcon from '../common/ToggleIcon';
 import './SingleToggle.css';
 export default class SingleToggle extends Component {
     state = {
-        lists: []
+        lists: [],
+        isOpenedAll: false
     }
     componentDidMount() {
         this.setState({
@@ -21,10 +22,17 @@ export default class SingleToggle extends Component {
           })
       })
     }
+    handleAll=()=> {
+        this.setState({
+            lists: this.state.lists.map(list => ({...list, open: true})),
+            isOpenedAll: true
+        })
+    }
     render() {
         const { lists } = this.state;
         return (
             <div>
+              <div className="collapse-btn"><button onClick={this.handleAll}>{this.state.isOpenedAll ? 'Collapse' : 'Open All'}</button></div>  
               {lists.map(list => 
               <div key={list.id}  onClick={() => this.selectedRowHandler(list)}>
                  <div className="acc-heading">
