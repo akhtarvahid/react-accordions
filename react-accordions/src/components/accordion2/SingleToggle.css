@@ -13,3 +13,10 @@
     padding: 15px;
     color: white;
 }
+.collapse-btn {
+    text-align: right;
+}
+.collapse-btn button{
+    outline: none;
+    padding: 10px 15px;
+}
