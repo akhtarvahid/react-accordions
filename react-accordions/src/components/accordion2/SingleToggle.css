@@ -3,10 +3,11 @@
     justify-content: space-between;
     align-items: center;
     background: white;
-    color: darkcyan;
+    color: #214461;
     cursor: pointer;
     padding: 15px;
     margin: 7px 0 0 0; 
+    font-weight: 600;
 }
 .body {
     background-color: #214462;
@@ -17,6 +18,10 @@
     text-align: right;
 }
 .collapse-btn button{
-    outline: none;
-    padding: 10px 15px;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border: none;
+    background: #214461;
+    color: white;
 }

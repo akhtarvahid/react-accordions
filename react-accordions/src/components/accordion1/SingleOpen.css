@@ -10,10 +10,11 @@ body {
     justify-content: space-between;
     align-items: center;
     background: white;
-    color: darkcyan;
+    color: #214461;
     cursor: pointer;
     padding: 5px;
     margin: 7px 0 0 0;
+    font-weight: 600;
   }
   .left {
     padding: 10px;

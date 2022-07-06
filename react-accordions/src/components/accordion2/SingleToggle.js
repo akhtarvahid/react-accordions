@@ -23,10 +23,10 @@ export default class SingleToggle extends Component {
       })
     }
     handleAll=()=> {
-        this.setState({
-            lists: this.state.lists.map(list => ({...list, open: true})),
-            isOpenedAll: true
-        })
+        this.setState(prev => ({
+            lists: this.state.lists.map(list => ({...list, open: !list.open})),
+            isOpenedAll: !prev.isOpenedAll
+        }))
     }
     render() {
         const { lists } = this.state;
