@@ -1,6 +1,7 @@
 import './App.css';
 import Accordion1 from './components/accordion1/SingleOpen';
 import SingleToggle from './components/accordion2/SingleToggle';
+import Accordion3 from './components/accordion3/Accordion3';
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
 
       <h3>Single Toggle</h3>
       <SingleToggle />
+
+      <h3>Select inner value from accordions</h3>
+      <Accordion3 />
     </div>
   );
 }
