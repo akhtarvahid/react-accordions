@@ -12,7 +12,7 @@ export default class SingleToggle extends Component {
             lists: listArray.map(list => ({ ...list, open: false }))
         })
     }
-    selectedRowHandler=(row)=> {
+    accordionRowHandler=(row)=> {
       const { lists } = this.state;
       this.setState({
           lists: lists?.map(list => {
@@ -22,7 +22,7 @@ export default class SingleToggle extends Component {
           })
       })
     }
-    handleAll=()=> {
+    accordionRowsHandler=()=> {
         this.setState(prev => ({
             lists: this.state.lists.map(list => ({...list, open: !list.open})),
             isOpenedAll: !prev.isOpenedAll
@@ -32,15 +32,17 @@ export default class SingleToggle extends Component {
         const { lists } = this.state;
         return (
             <div>
-              <div className="collapse-btn"><button onClick={this.handleAll}>{this.state.isOpenedAll ? 'Collapse' : 'Open All'}</button></div>  
+              <div className="collapse-btn">
+                  <button onClick={this.accordionRowsHandler}>{this.state.isOpenedAll ? 'Collapse' : 'Open All'}</button>
+              </div>  
               {lists.map(list => 
-              <div key={list.id}  onClick={() => this.selectedRowHandler(list)}>
-                 <div className="acc-heading">
-                    <div>{list.title}</div>
-                    <ToggleIcon state={list.open}/>
+               <React.Fragment key={list.id}>
+                 <div className="acc-heading" onClick={() => this.accordionRowHandler(list)}>
+                  <div>{list.title}</div>
+                  <ToggleIcon state={list.open}/>
                  </div>
                  {list.open && <div className="body">{list.content}</div>} 
-              </div>  
+               </React.Fragment>  
               )}
             </div>
         )
