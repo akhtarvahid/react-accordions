@@ -25,3 +25,12 @@
     background: #214461;
     color: white;
 }
+
+/* accordion3 style */
+.chip {
+    background: white;
+    color: #214461;
+    border-radius: 50px;
+    margin: 10px;
+    padding: 8px 15px;
+}
