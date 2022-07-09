@@ -21,6 +21,9 @@ export default class Accordion3 extends Component {
           })
       })
     }
+    addChips=(item)=> {
+      console.log(item);
+    }
     render() {
         const { lists } = this.state;
         return (
@@ -33,10 +36,11 @@ export default class Accordion3 extends Component {
                  </div>
                  {list.open && 
                  <div className="body">
-                     {list.content}
-                     <div>
+                     <div>{list.content}</div>
+                     <h4>Select items</h4>
+                     <div className="acc-chips">
                         {list.items.map(item =>
-                         <span key={item.id} className="chip">
+                         <span key={item.id} className="chip" onClick={() => this.addChips(item)}>
                              {item.item}
                          </span>    
                         )} 
