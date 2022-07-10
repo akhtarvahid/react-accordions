@@ -4,7 +4,8 @@ import ToggleIcon from '../common/ToggleIcon';
 import '../accordion2/SingleToggle.css';
 export default class Accordion3 extends Component {
     state = {
-        lists: []
+        lists: [],
+        selectedChips: []
     }
     componentDidMount() {
         this.setState({
@@ -21,8 +22,10 @@ export default class Accordion3 extends Component {
           })
       })
     }
-    addChips=(item)=> {
-      console.log(item);
+    addChips=(selectedValue)=> {
+      this.setState(prev => ({
+          selectedChips: [...prev.selectedChips, selectedValue.item]
+      }))
     }
     render() {
         const { lists } = this.state;
