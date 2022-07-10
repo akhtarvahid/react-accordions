@@ -16,9 +16,9 @@ export default class SingleToggle extends Component {
       const { lists } = this.state;
       this.setState({
           lists: lists?.map(list => {
-            return list.id === row.id ? 
-             ({...list, open: !list.open }): 
-             list
+            return list.id === row.id && !list.open ? 
+             ({...list, open: true }): 
+             ({...list, open: false })
           })
       })
     }
