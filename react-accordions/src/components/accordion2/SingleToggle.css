@@ -18,6 +18,11 @@
     display: flex;
     flex-flow: row wrap;
     margin-top: 1rem;
+    cursor: pointer;
+}
+.selectedChips {
+    background-color: coral;
+    color: white;
 }
 .collapse-btn {
     text-align: right;

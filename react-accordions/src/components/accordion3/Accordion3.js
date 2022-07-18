@@ -15,17 +15,21 @@ export default class Accordion3 extends Component {
     accordionRowHandler=(row)=> {
       const { lists } = this.state;
       this.setState({
-          lists: lists?.map(list => {
-            return list.id === row.id ? 
-             ({...list, open: !list.open }): 
-             list
+          lists: lists?.map(list => { return list.id === row.id ?  ({...list, open: !list.open }): list
           })
       })
     }
-    addChips=(selectedValue)=> {
-      this.setState(prev => ({
-          selectedChips: [...prev.selectedChips, selectedValue.item]
-      }))
+    addChips=(row, chip)=> {
+        this.setState(prev => ({
+            lists: prev?.lists?.map(list => { 
+                     return list.id === row.id ? {
+                     ...list,
+                    items: list.items.map(item => {
+                        return item.id === chip.id ? {...item, selected: true} : item
+                    })
+                } : list
+            })
+        }))
     }
     render() {
         const { lists } = this.state;
@@ -43,7 +47,7 @@ export default class Accordion3 extends Component {
                      <h4>Select items</h4>
                      <div className="acc-chips">
                         {list.items.map(item =>
-                         <span key={item.id} className="chip" onClick={() => this.addChips(item)}>
+                         <span key={item.id} className={!item.selected ? "chip": "selectedChips"} onClick={() => this.addChips(list, item)}>
                              {item.item}
                          </span>    
                         )} 
