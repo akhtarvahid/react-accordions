@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import listArray from "../../utils/data.json";
 import ToggleIcon from '../common/ToggleIcon';
-import './SingleToggle.css';
+import '../../App.css';
 export default class SingleToggle extends Component {
     state = {
         lists: [],

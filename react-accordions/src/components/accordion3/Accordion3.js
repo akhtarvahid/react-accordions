@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import listArray from "../../utils/data.json";
 import ToggleIcon from '../common/ToggleIcon';
-import '../accordion2/SingleToggle.css';
+import '../../App.css';
 export default class Accordion3 extends Component {
     state = {
-        lists: [],
-        selectedChips: []
+        lists: []
     }
     componentDidMount() {
         this.setState({
@@ -21,18 +20,19 @@ export default class Accordion3 extends Component {
     }
     addChips=(row, chip)=> {
         this.setState(prev => ({
-            lists: prev?.lists?.map(list => { 
-                     return list.id === row.id ? {
-                     ...list,
-                    items: list.items.map(item => {
-                        return item.id === chip.id ? {...item, selected: true} : item
-                    })
-                } : list
+            lists: prev?.lists?.map(innerList => { 
+                return innerList.id === row.id ? {
+                ...innerList,
+                items: innerList.items.map(item => {
+                    return item.id === chip.id ? {...item, selected: !item.selected} : item
+                })
+            } : innerList
             })
         }))
     }
     render() {
         const { lists } = this.state;
+        console.log(this.state.lists)
         return (
             <div> 
               {lists.map(list => 
@@ -47,7 +47,10 @@ export default class Accordion3 extends Component {
                      <h4>Select items</h4>
                      <div className="acc-chips">
                         {list.items.map(item =>
-                         <span key={item.id} className={!item.selected ? "chip": "selectedChips"} onClick={() => this.addChips(list, item)}>
+                         <span 
+                             key={item.id} 
+                             onClick={() => this.addChips(list, item)}
+                             className={`chips ${!item.selected ? 'chip': 'selected'}`}>
                              {item.item}
                          </span>    
                         )} 
