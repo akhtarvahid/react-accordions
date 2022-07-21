@@ -37,7 +37,7 @@ export default class SingleToggle extends Component {
               </div>  
               {lists.map(list => 
                <React.Fragment key={list.id}>
-                 <div className="acc-heading" onClick={() => this.accordionRowHandler(list)}>
+                 <div className="accordion-heading" onClick={() => this.accordionRowHandler(list)}>
                   <div>{list.title}</div>
                   <ToggleIcon state={list.open}/>
                  </div>

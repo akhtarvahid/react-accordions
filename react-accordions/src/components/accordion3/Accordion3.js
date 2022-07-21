@@ -4,21 +4,17 @@ import ToggleIcon from '../common/ToggleIcon';
 import '../../App.css';
 export default class Accordion3 extends Component {
     state = {
-        lists: []
-    }
-    componentDidMount() {
-        this.setState({
-            lists: listArray.map(list => ({ ...list, open: false }))
-        })
+        lists: listArray
     }
     accordionRowHandler=(row)=> {
       const { lists } = this.state;
       this.setState({
-          lists: lists?.map(list => { return list.id === row.id ?  ({...list, open: !list.open }): list
+          lists: lists?.map(list => { 
+              return list.id === row.id ?  ({...list, open: !list.open }): list
           })
       })
     }
-    addChips=(row, chip)=> {
+    selectChips=(row, chip)=> {
         this.setState(prev => ({
             lists: prev?.lists?.map(innerList => { 
                 return innerList.id === row.id ? {
@@ -32,12 +28,11 @@ export default class Accordion3 extends Component {
     }
     render() {
         const { lists } = this.state;
-        console.log(this.state.lists)
         return (
             <div> 
               {lists.map(list => 
                <React.Fragment key={list.id}>
-                 <div className="acc-heading" onClick={() => this.accordionRowHandler(list)}>
+                 <div className="accordion-heading" onClick={() => this.accordionRowHandler(list)}>
                   <div>{list.title}</div>
                   <ToggleIcon state={list.open}/>
                  </div>
@@ -45,11 +40,11 @@ export default class Accordion3 extends Component {
                  <div className="body">
                      <div>{list.content}</div>
                      <h4>Select items</h4>
-                     <div className="acc-chips">
+                     <div className="accordion-chips">
                         {list.items.map(item =>
                          <span 
                              key={item.id} 
-                             onClick={() => this.addChips(list, item)}
+                             onClick={() => this.selectChips(list, item)}
                              className={`chips ${!item.selected ? 'chip': 'selected'}`}>
                              {item.item}
                          </span>    
