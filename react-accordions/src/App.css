@@ -4,7 +4,7 @@
   width: 50%;
 }
 /* accordion2 styles */
-.acc-heading {
+.accordion-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +34,7 @@
 }
 
 /* accordion3 style */
-.acc-chips {
+.accordion-chips {
   display: flex;
   flex-flow: row wrap;
   margin-top: 1rem;
