@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
 import listArray from "../../utils/data.json";
 import ToggleIcon from "../common/ToggleIcon";
 import "../../App.css";

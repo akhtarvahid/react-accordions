@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./SingleOpen.css";
 import listArray from "../../utils/data.json";
 import AccordionHeader from "../common/AccordionHeader";
