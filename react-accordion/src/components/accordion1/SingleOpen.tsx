@@ -2,17 +2,11 @@ import { useState } from "react";
 import "./SingleOpen.css";
 import listArray from "../../utils/data.json";
 import AccordionHeader from "../common/AccordionHeader";
+import { List } from "../../types";
 
-export interface ListProps {
-  id: number;
-  title: string;
-  open: boolean;
-  content: string;
-  items: { id: number; item: string, selected?: boolean | undefined }[];
-}
 export default function Accordion1() {
   const [state, setState] = useState<{
-    lists: ListProps[];
+    lists: List[];
     selectedIndx: number | null;
   }>({
     lists: listArray,

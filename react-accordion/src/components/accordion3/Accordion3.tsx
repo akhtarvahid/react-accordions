@@ -2,15 +2,17 @@ import React from "react";
 import listArray from "../../utils/data.json";
 import ToggleIcon from "../common/ToggleIcon";
 import "../../App.css";
-import { ListProps } from "../accordion1/SingleOpen";
+import { Item, List } from "../../types";
+
+type State = {
+  lists: List[];
+};
 
 const Accordion3: React.FC = () => {
-  const [state, setState] = React.useState<{
-    lists: ListProps[];
-  }>({
+  const [state, setState] = React.useState<State>({
     lists: listArray,
   });
-  const accordionRowHandler = (row: ListProps) => {
+  const accordionRowHandler = (row: List) => {
     const { lists } = state;
     setState((prevState) => ({
       ...prevState,
@@ -19,10 +21,7 @@ const Accordion3: React.FC = () => {
       }),
     }));
   };
-  const selectChips = (
-    row: ListProps,
-    chip: { id: number; item: string; selected?: boolean | undefined }
-  ) => {
+  const selectChips = (row: List, chip: Item) => {
     setState((prev) => ({
       lists: prev?.lists?.map((innerList) => {
         return innerList.id === row.id

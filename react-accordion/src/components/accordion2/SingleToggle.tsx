@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import listArray from "../../utils/data.json";
 import ToggleIcon from "../common/ToggleIcon";
 import "../../App.css";
-import { ListProps } from "../accordion1/SingleOpen";
+import { List } from "../../types";
+
+type State = {
+  lists: List[];
+  isOpenedAll: boolean;
+};
 
 const SingleToggle: React.FC = () => {
-  const [state, setState] = React.useState<{
-    lists: ListProps[];
-    isOpenedAll: boolean;
-  }>({
+  const [state, setState] = React.useState<State>({
     lists: [],
     isOpenedAll: false,
   });
@@ -20,7 +22,7 @@ const SingleToggle: React.FC = () => {
     }));
   }, []);
 
-  const accordionRowHandler = (row: ListProps) => {
+  const accordionRowHandler = (row: List) => {
     const { lists } = state;
     setState((prevState) => ({
       ...prevState,
