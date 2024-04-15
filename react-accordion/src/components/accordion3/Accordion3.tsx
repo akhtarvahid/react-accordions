@@ -12,6 +12,7 @@ const Accordion3: React.FC = () => {
   const [state, setState] = React.useState<State>({
     lists: listArray,
   });
+
   const accordionRowHandler = (row: List) => {
     const { lists } = state;
     setState((prevState) => ({
@@ -21,6 +22,7 @@ const Accordion3: React.FC = () => {
       }),
     }));
   };
+  
   const selectChips = (row: List, chip: Item) => {
     setState((prev) => ({
       lists: prev?.lists?.map((innerList) => {
