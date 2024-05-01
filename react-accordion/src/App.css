@@ -53,3 +53,11 @@
   background-color: coral;
   color: white;
 }
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.row button {
+  height: 42px;
+  width: 150px;
+}
